@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://6bpbtt2ec3tp"]
+
+[ext_resource type="Script" path="res://Scripts/Brute.gd" id="1_tm2cy"]
+[ext_resource type="Texture2D" uid="uid://cf534uj0g7ro1" path="res://Spritesheets/world_black.png" id="2_mbnd4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdmxq"]
+size = Vector2(14, 14)
+
+[node name="Brute" type="CharacterBody2D"]
+position = Vector2(160, 128)
+script = ExtResource("1_tm2cy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mbnd4")
+centered = false
+hframes = 49
+vframes = 22
+frame = 324
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_tdmxq")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(8, 8)
+target_position = Vector2(-16, 0)
